@@ -79,6 +79,9 @@
             let seconds = document.getElementById('seconds').value || 0;
             let timeLeft = (minutes * 60) + parseInt(seconds);
             setMode("progress");
+
+            isPaused = false;
+            console.log(Boolean(isPaused));
             countdownInterval = setInterval(() => {
                 if(!isPaused) {
                     timeLeft--;
@@ -118,7 +121,6 @@
             clearInterval(countdownInterval);
             setMode("setting");
         }
-
 
         // アラートを開始する関数
         function startAlert() {
